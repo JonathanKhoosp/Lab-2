@@ -1,41 +1,28 @@
 print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
 
-
-#def calculate_bmi(height, weight):
- #print("Height = " + str(height))
-# print("Weight = " + str(weight))
-#print("Weight = " + str(weight))
- #bmi = weight / (height * height)
- #print("BMI = " + str(bmi))
-
-#£££calculate_bmi(height=1.73, weight=57)
-#print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
-
-
-#def calculate_bmi(height, weight):
-# bmi = weight / (height * height)
- #return bmi
-
+def calculate_bmi(height, weight):
+    print("Height = " + str(height))
+    print("Weight = " + str(weight))
+    bmi = weight / (height * height)
+    print("BMI = " + str(bmi))
+    if bmi < 18.5:
+        return -1  # Under weight
+    elif bmi >= 18.5 and bmi < 25:
+        return 0   # Normal weight
+    else:
+        return 1   # Over weight
 
 # Get user input for height and weight
-#height = float(input("Enter height in meters: "))
-#weight = float(input("Enter weight in kilograms: "))
+height = float(input("Enter height in meters: "))
+weight = float(input("Enter weight in kilograms: "))
 
 # Call the calculate_bmi function with user input
-#bmi = calculate_bmi(height, weight)temperature=int(input("temperature :"))sectemp=int(input("temperature :"))wetemp=int(input("temperature :"))print((temperature+sectemp+wetemp)/3)
+bmi_classification = calculate_bmi(height, weight)
 
-
-# Print the calculated BMI
-#print("BMI: {:.2f}".format(bmi))
-
-def main():
-    print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
-
- def get_user_input():
-def display_main_menu():
-    num_list = get_user_input()
-
-
-
-if __name__ == "__main__":
-main()
+# Print the calculated BMI classification
+if bmi_classification == -1:
+    print("Under weight")
+elif bmi_classification == 0:
+    print("Normal weight")
+else:
+    print("Over weight")
